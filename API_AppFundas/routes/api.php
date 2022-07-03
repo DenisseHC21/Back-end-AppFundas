@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Rutas Dev2
+Route::get('Usuario', [Usuario::class, 'list']);
+Route::get('Usuario', [Usuario::class, 'show']);
+Route::post('Usuario', [Usuario::class, 'store']);
