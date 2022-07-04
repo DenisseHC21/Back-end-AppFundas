@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Rutas Dev2
-Route::get('Usuario', [Usuario::class, 'list']);
-Route::get('Usuario', [Usuario::class, 'show']);
-Route::post('Usuario', [Usuario::class, 'store']);
+Route::get('usuarios', [Usuario::class, 'list']);
+Route::post('usuarios', [Usuario::class, 'store']);
+Route::get('usuarios/{usuario}', [Usuario::class, 'show']);
+Route::put('usuarios/{usuario}', [Usuario::class, 'update']);
+Route::delete('usuarios/{usuario}', [Usuario::class, 'destroy']);
